@@ -251,9 +251,17 @@ sudo rm -rf "$HOME/poppler/lib/pkgconfig"
 sudo rm -rf "$HOME/poppler/include"
 sudo rm -rf "$HOME/poppler/share/man"
 sudo rm -rf "$HOME/poppler/share/pkgconfig"
-sudo cp -P /usr/lib/libjpeg.* "$HOME/poppler/lib"
-sudo cp -P /usr/lib/libopenjp2.* "$HOME/poppler/lib"
-sudo cp -P /usr/lib/libpng* "$HOME/poppler/lib"
-sudo cp -P /usr/lib/libcairo* "$HOME/poppler/lib"
-sudo cp -P /usr/lib/libpixman* "$HOME/poppler/lib"
+sudo cp /usr/lib/libjpeg.so.8.1.2 "$HOME/poppler/lib/libjpeg.so.8"
+sudo cp /usr/lib/libopenjp2.so.2.3.0 "$HOME/poppler/lib/libopenjp2.so.7"
+sudo cp /usr/lib/libpng16.so.16.32.0 "$HOME/poppler/lib/libpng16.so.16"
+sudo cp /usr/lib/libcairo.so.2.11400.10 "$HOME/poppler/lib/libcairo.so.2"
+sudo cp /usr/lib/libpixman-1.so.0.34.0 "$HOME/poppler/lib/libpixman-1.so.0"
+sudo cp /usr/lib/libfreetype.so.6.15.0 "$HOME/poppler/lib/libfreetype.so.6"
+sudo cp /usr/lib/libfontconfig.so.1.10.1 "$HOME/poppler/lib/libfontconfig.so.1"
+sudo sed -i '' "$HOME/poppler/lib/libpoppler.so.71"
+sudo sed -i '' "$HOME/poppler/lib/libpoppler-cpp.so.0"
+sudo rm $HOME/poppler/lib/libpoppler-cpp.so.0.3.0 \
+        $HOME/poppler/lib/libpoppler-cpp.so       \
+        $HOME/poppler/lib/libpoppler.so.71.0.0    \
+        $HOME/poppler/lib/libpoppler.so
 tar zcvf poppler.tgz poppler/
