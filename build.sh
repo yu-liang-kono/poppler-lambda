@@ -215,7 +215,7 @@ cd       build &&
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr .. &&
 make
 sudo make install
-cd ..
+cd ../..
 rm -rf openjpeg-2.3.0.tar.gz openjpeg-2.3.0
 sudo ldconfig
 
@@ -254,4 +254,6 @@ sudo rm -rf "$HOME/poppler/share/pkgconfig"
 sudo cp /usr/lib/libjpeg.* "$HOME/poppler/lib"
 sudo cp /usr/lib/libopenjp2.* "$HOME/poppler/lib"
 sudo cp /usr/lib/libpng* "$HOME/poppler/lib"
+sudo cp /usr/lib/libcairo* "$HOME/poppler/lib"
+sudo cp /usr/lib/libpixman* "$HOME/poppler/lib"
 tar zcvf poppler.tgz poppler/
